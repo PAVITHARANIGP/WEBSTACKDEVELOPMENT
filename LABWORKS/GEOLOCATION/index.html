@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      type="text/javascript"
+      src="https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AnCJBPxbRs9A31N2sOmynMefdJHCBaFquKgWtJm7OVyrn8Zc58znWrmHbhaWtEQQ"
+      async
+      defer
+    ></script>
+    <style>
+      html,
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      #myMap {
+        width: 50%;
+        /* display: inline; */
+        z-index: 10;
+        /* margin-left: 10px; */
+        border: 2px solid black;
+      }
+      .flex-container {
+        display: flex;
+        height: 60%;
+        background-color: rgb(36, 107, 43);
+        border: 5px solid black;
+        margin-left: 20px;
+        margin-right: 30px;
+      }
+      .container {
+        height: 100vh;
+        padding-left: 10px;
+        border: 5px solid black;
+      }
+      #details {
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+    </style>
+
+    <div class="container" style="text-align: center">
+      <h2>HTML CANVAS</h2>
+      <canvas id="title" style="text-align: center">Geolocation</canvas>
+      <div class="flex-container">
+        <div id="myMap"></div>
+        <div id="details">
+          <p id="latitude" style="font-weight: bold;"></p>
+          <p id="longitude" style="font-weight: bold;"></p>
+          <h2>HTML SVG</h2>
+          <div style="display: flex; justify-content: center;">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              width="256"
+              height="256"
+              viewBox="0 0 256 256"
+              xml:space="preserve"
+            >
+              <defs></defs>
+              <g
+                style="
+                  stroke: none;
+                  stroke-width: 0;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: none;
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+              >
+                <path
+                  d="M 45 0 C 27.395 0 13.123 14.272 13.123 31.877 c 0 7.86 2.858 15.043 7.573 20.6 L 45 81.101 l 24.304 -28.624 c 4.716 -5.558 7.573 -12.741 7.573 -20.6 C 76.877 14.272 62.605 0 45 0 z M 45 43.889 c -7.24 0 -13.11 -5.869 -13.11 -13.11 c 0 -7.24 5.869 -13.11 13.11 -13.11 s 13.11 5.869 13.11 13.11 C 58.11 38.02 52.24 43.889 45 43.889 z"
+                  style="
+                    stroke: none;
+                    stroke-width: 1;
+                    stroke-dasharray: none;
+                    stroke-linecap: butt;
+                    stroke-linejoin: miter;
+                    stroke-miterlimit: 10;
+                    fill: rgb(0, 0, 0);
+                    fill-rule: nonzero;
+                    opacity: 1;
+                  "
+                  transform=" matrix(1 0 0 1 0 0) "
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M 58.958 71.559 L 45 82.839 L 31.057 71.556 c -9.329 1.65 -15.682 4.901 -15.682 8.645 c 0 5.412 13.263 9.8 29.625 9.8 c 16.361 0 29.625 -4.388 29.625 -9.8 C 74.625 76.458 68.278 73.209 58.958 71.559 z"
+                  style="
+                    stroke: none;
+                    stroke-width: 1;
+                    stroke-dasharray: none;
+                    stroke-linecap: butt;
+                    stroke-linejoin: miter;
+                    stroke-miterlimit: 10;
+                    fill: rgb(0, 0, 0);
+                    fill-rule: nonzero;
+                    opacity: 1;
+                  "
+                  transform=" matrix(1 0 0 1 0 0) "
+                  stroke-linecap="round"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <script>
+      var c = document.getElementById("title");
+      var ctx = c.getContext("2d");
+      ctx.font = "30px Arial";
+      ctx.fillText("Geolocation", 100, 50);
+    </script>
+
+    <script>
+      window.addEventListener("load", () => {
+        let map = new Microsoft.Maps.Map("#myMap", {
+          mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+          zoom: 15,
+        });
+        let currentPin;
+        navigator.geolocation.watchPosition((pos) => {
+          var e1 = document.getElementById("latitude");
+          var e2 = document.getElementById("longitude");
+          e1.innerText = "Latitude = " + pos.coords.latitude;
+          e2.innerText = "Longitude = " + pos.coords.longitude;
+          map.entities.remove(currentPin);
+          currentPin = new Microsoft.Maps.Pushpin(
+            new Microsoft.Maps.Location(
+              pos.coords.latitude,
+              pos.coords.longitude
+            ),
+            {
+              title: "Current Location",
+              // icon: "./pin.svg",
+            }
+          );
+          map.entities.push(currentPin);
+        });
+      });
+    </script>
+  </body>
+</html>
