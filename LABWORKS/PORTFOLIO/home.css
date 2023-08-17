@@ -1,0 +1,115 @@
+.hero-section{
+    display: flex;
+    flex-direction: column;
+    background-image: url("./images/home.jpg");
+    min-height: 765px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: flex-end;
+    margin-bottom: 100px
+
+}
+
+.fixnav{
+    background-color:white;
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
+}
+
+.hero-header{
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    padding: 5px 100px;
+    text-align: center;
+    /* background-color: yellow; */
+    
+}
+
+.hero-intro{
+    background-color: rgba(255, 129, 129, 0.422);
+    margin-top:20px ;
+    color: white;
+    padding:30px 100px;
+    text-align: center;
+
+    /* flex: 1; */
+}
+
+.aboutmesection{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.aboutinfo{
+    /* width: 50%; */
+    background-color: rgba(255, 129, 129, 0.422);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 20px; */
+    flex: 1;
+    justify-content: center;
+
+}
+
+.aboutimage img{
+    width: 500px;
+
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0px 20px;
+    color: black;
+
+    
+}
+
+
+.single-social-button{
+    height: 30px;
+    width: 30px;
+    /* background-color: red; */
+    /* padding: 5px; */
+    border-radius: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+    color: black;
+}
+.single-social-button:hover,.link:hover{
+    background-color: lightgray;
+    text-decoration: none;
+    color: black;
+
+}
+.social-links-container{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px;
+}
+a{
+    text-decoration: none;
+}
+
+.modalbutton{
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    width: fit-content;
+    margin: 50px auto;
+
+}
