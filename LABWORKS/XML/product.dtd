@@ -1,0 +1,7 @@
+<!ELEMENT products (product+)>
+<!ELEMENT product (product_name,price,available_quantity)>
+<!ELEMENT product_name (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT available_quantity (#PCDATA)>
+<!ATTLIST product product_id ID #REQUIRED>
+<!ATTLIST product category (Clothing|Electronics|Books) "Sample Product" >

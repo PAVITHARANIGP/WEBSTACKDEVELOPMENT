@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="product.dtd" type="application/xml-dtd"?>
+<?xml-model href="product.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<products>
+    <product product_id="p3" category="Clothing">
+        <product_name>Chikankari kurthi</product_name>
+        <price>20</price>
+        <available_quantity>5</available_quantity>
+    </product>
+    <product product_id="p1" category="Electronics">
+        <product_name>Laptop</product_name>
+        <price>455</price>
+        <available_quantity>160</available_quantity>
+    </product>
+    <product product_id="p2" category="Books">
+        <product_name>Harry Potter</product_name>
+        <price>7</price>
+        <available_quantity>20</available_quantity>
+    </product>
+
+</products>
