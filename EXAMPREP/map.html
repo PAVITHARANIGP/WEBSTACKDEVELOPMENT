@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="map.js">
+    </script>
+    <script 
+    type="text/javascript"
+    src="http://www.bing.com/api/maps/mapcontrol?callback=GetMap"
+    async
+    defer>
+
+    </script>
+</head>
+<style>
+    .Big{
+        background-color: rgb(98, 0, 255);
+        padding: 50px ;
+    }
+    .Map{
+        height: 600px;
+        width: 800px;
+    }
+</style>
+<body>
+    <div class="Big">
+
+        <div>LONGITUDE : <span id="Longitude">
+        </span></div>
+        <div>LATITUDE : <span id="Longitude">
+        </span></div>
+        <div id="Status"></div>
+        <div id="Error"></div>
+    </div>
+    <div class="Map" id="myMap">
+
+    </div>
+</body>
+</html>
