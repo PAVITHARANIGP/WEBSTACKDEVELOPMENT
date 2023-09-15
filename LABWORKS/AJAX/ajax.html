@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fetch Books</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    function displayBooks(books) {
+      var bookList = $('#bookList');
+      bookList.empty();
+      $.each(books, function(i, book) {
+        var title = $('<h2>').text(book.title);
+        var author = $('<p>').text('Author: ' + book.author);
+        var publisher = $('<p>').text('Publisher: ' + book.publisher);
+        var li = $('<li>').append(title, author, publisher);
+        bookList.append(li);
+      });
+    }
+
+    $(document).ready(function() {
+      $('#fetchBooks').click(function() {
+        $.ajax({
+          url: 'https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&format=json&jscmd=data',
+          dataType: 'json',
+          success: function(data) {
+            var books = [];
+            $.each(data, function(key, value) {
+              books.push({
+                title: value.title,
+                author: value.authors[0].name,
+                publisher: value.publishers[0].name
+              });
+            });
+            displayBooks(books);
+          }
+        });
+      });
+    });
+  </script>
+  <style>
+    body{
+        background-color: rgb(242, 206, 138);
+    }
+
+  </style>
+</head>
+<body>
+    <h1><center>Fetching the Book</center></h1>
+    <center><img src="tomsawyer.jpeg" alt=""></center>
+    <p><b>The Adventures of Tom Sawyer</b> also simply known as Tom Sawyer is an 1876 novel by Mark Twain about a boy growing up along the Mississippi River. 
+      It is set in the 1840s in the town of St. Petersburg, which is based on Hannibal, Missouri, where Twain lived as a boy. In the novel, 
+      Tom Sawyer has several adventures, often with his friend Huckleberry Finn. Originally a commercial failure, the book ended up being the best 
+      selling of Twain's works during his lifetime.Though overshadowed by its 1884 sequel, Adventures of Huckleberry Finn, the book is considered by many to be a masterpiece of American literature.[5] It was one of the first novels to be written on a typewriter.</p>
+  
+  <center><button id="fetchBooks">Fetch Books</button></center>
+  <ul id="bookList"></ul>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+</head>
+<body>
+    <center><button id="fetchBooks">Fetch Books</button></center>
+    <div id="bookList"></div>
+
+    <script>
+const fetchButton = document.getElementById("fetchBooks");
+const bookList = document.getElementById("bookList");
+
+fetchButton.addEventListener("click", fetchBooks);
+
+function fetchBooks() {
+    const apiUrl = "https://openlibrary.org/works/OL45804W/editions.json"; 
+
+    fetch(apiUrl)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Failed to fetch books.");
+            }
+            return response.json();
+        })
+        .then((books) => {
+            console.log(books.entries,"hihihih")
+            displayBooks(books.entries);
+        })
+        .catch((error) => {
+            bookList.textContent = "Error fetching books: " + error.message;
+        });
+}
+
+function displayBooks(books) {
+    bookList.innerHTML = "";
+
+    const ul = document.createElement("ul");
+
+    books.forEach((book) => {
+        const li = document.createElement("li");
+        li.textContent = `${book.title} by ${book.author}`;
+        ul.appendChild(li);
+    });
+
+    bookList.appendChild(ul);
+}
+
+    </script>
+</body>
+</html> -->
