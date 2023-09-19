@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="feedback1.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            form.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent form submission for now
+
+                // Get form fields
+                const name = form.querySelector('input[name="name"]');
+                const email = form.querySelector('input[name="email"]');
+                const feedback = form.querySelector('input[name="Feedback"]');
+               
+
+                // Basic validation checks
+                if (name.value.length < 5) {
+                    Swal.fire("Error", "Name should be at least 5 characters long.", "error");
+                    name.focus();
+                    return false;
+                }
+
+              
+
+                if (!email.value.includes("@")) {
+                    Swal.fire("Error", "Please enter a valid email address.", "error");
+                    email.focus();
+                    return false;
+                }
+
+                if (feedbackInput.value.trim() === '') {
+                   setErrorFor(feedbackInput, 'Feedback cannot be blank');
+                   isValid = false;
+                }
+
+                
+
+                // If all checks pass, show a success message
+                Swal.fire("Success", "Form submitted successfully!", "success");
+                // form.submit();
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin-left: 35rem; 
+    margin-top: 2rem;
+    padding: 10px;
+    width: 400px;
+    background-color:rgb(255, 255, 255);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:#143d59;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  
+  select {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #143d59;
+    border-radius: 4px;
+    transition: border-color 0.2s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  select:focus {
+  border-color: #336699;
+  }
+  
+  input[type="submit"] {
+    background-color:#5588aa;
+    color: #fff;
+    border: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #143d59;
+  }
+    </style>
+    <div class="feedback-form">
+        <h2>Leave a Comment</h2>
+        <form>
+            <label>Name:
+                <input type="text" name="name" required placeholder="min 5 characters">
+            </label>
+            <label>Email:
+                <input type="email" name="email" required placeholder="user@example.com">
+            </label>
+            <label>Feedback:
+                <input type="text" name="Feedback">
+            </label>
+           
+               
+            <center> <input type="submit" value="Submit"></center>
+        </form>
+    </div>
+</body>
+
+</html>
