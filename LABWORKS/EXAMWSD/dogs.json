@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
     {
       "breed": "Golden Retriever",
@@ -39,4 +40,47 @@
         "Colour": "Golden",
         "Country": "United States"
       }
+=======
+[
+    {
+      "breed": "Golden Retriever",
+      "Colour": "Golden",
+      "Country": "United States"
+    },
+    {
+        "breed": "Golden Retriever",
+        "Colour": "Golden",
+        "Country": "United States"
+      },
+      {
+        "breed": "Golden Retriever",
+        "Colour": "Golden",
+        "Country": "United States"
+      },
+      {
+        "breed": "Golden Retriever",
+        "Colour": "Golden",
+        "Country": "United States"
+      },
+      {
+        "breed": "Golden Retriever",
+        "Colour": "Golden",
+        "Country": "United States"
+      },
+      {
+        "breed": "Golden Retriever",
+        "Colour": "Golden",
+        "Country": "United States"
+      },
+      {
+        "breed": "Golden Retriever",
+        "Colour": "Golden",
+        "Country": "United States"
+      },
+      {
+        "breed": "Golden Retriever",
+        "Colour": "Golden",
+        "Country": "United States"
+      }
+>>>>>>> 9e65785162592f2c180b74c842789233d7e96f80
   ]

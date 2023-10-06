@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,3 +48,54 @@ fetchRandomDogImage();
     </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dog Images</title>
+</head>
+<body>
+    <h1>Random Dog Images</h1>
+    <div id="dogImageContainer">
+        <img id="dogImage" src="">
+    </div>
+    <button id="getRandomDog">Get Random Dog</button>
+
+    <script>
+        const dogImageContainer = document.getElementById("dogImageContainer");
+const dogImage = document.getElementById("dogImage");
+const getRandomDogButton = document.getElementById("getRandomDog");
+
+const apiUrl = "https://dog.ceo/api/breeds/image/random";
+
+getRandomDogButton.addEventListener("click", fetchRandomDogImage);
+
+async function fetchRandomDogImage() {
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+        const imageUrl = data.message;
+
+       
+        dogImage.src = imageUrl;
+       
+
+        
+        dogImageContainer.style.display = "block";
+    } catch (error) {
+        console.error("Error fetching random dog image:", error);
+    }
+}
+
+
+fetchRandomDogImage();
+    </script>
+</body>
+</html>
+>>>>>>> 9e65785162592f2c180b74c842789233d7e96f80

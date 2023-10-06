@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="LABWORKS/EXAMWSD/dog.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <?xml-stylesheet href="LABWORKS/EXAMWSD/dog.xsl" type="text/xsl"?>
@@ -44,3 +45,51 @@
         <country>Germany</country>
     </dog>
 </Dogs>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="dog.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<?xml-stylesheet href="dog.xsl" type="text/xsl"?>
+<Dogs>
+    <dog>
+        <breed> Golden Retriever <breed>
+        <colour>Golden</colour>
+        <country>United States<country>
+    </dog>
+
+      <dog>
+        <breed> German Shephard <breed>
+        <colour>Black and Tan</colour>
+        <country>Germany<country>
+    </dog>
+      <dog>
+        <breed> Poodle<breed>
+        <colour>White</colour>
+        <country>France<country>
+    </dog>
+      <dog>
+        <breed> BullDog <breed>
+        <colour>Brindle</colour>
+        <country>United Kingdom<country>
+    </dog>
+      <dog>
+        <breed> Labrador Retriever<breed>
+        <colour>Yellow</colour>
+        <country>Canada<country>
+    </dog>
+      <dog>
+        <breed> Boxer <breed>
+        <colour>Fawn</colour>
+        <country>Germany<country>
+    </dog>
+      <dog>
+        <breed> Beagle <breed>
+        <colour>Tri-colour</colour>
+        <country>United Kingdom<country>
+    </dog>
+    <dog>
+        <breed> Dachshund <breed>
+        <colour>Red</colour>
+        <country>Germany<country>
+    </dog>
+</Dogs>
+>>>>>>> 9e65785162592f2c180b74c842789233d7e96f80
