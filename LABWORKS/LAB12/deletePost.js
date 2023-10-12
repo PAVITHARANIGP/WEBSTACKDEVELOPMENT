@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const fs = require('fs');
 const path = require('path');
 
@@ -7,4 +8,15 @@ fs.unlink(path.join(__dirname, '/posts', 'blogPost.txt'), (err) => {
     return;
   }
   console.log('file deleted');
+=======
+const fs = require('fs');
+const path = require('path');
+
+fs.unlink(path.join(__dirname, '/posts', 'blogPost.txt'), (err) => {
+  if (err) {
+    console.log('No such file is present');
+    return;
+  }
+  console.log('file deleted');
+>>>>>>> 6c7f400f4d4ecfecec093991f299411d69a654bc
 });
